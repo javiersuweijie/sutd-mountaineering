@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="mountainApp" ng-controller="AppCtrl">
+<head>
+<title>SUTD Mountaineering | {{pageTitle}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- font awesome from BootstrapCDN -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<!-- compiled CSS -->
+<% styles.forEach( function ( file ) { %>
+<link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+<!-- compiled JavaScript -->
+<% scripts.forEach( function ( file ) { %>
+<script type="text/javascript" src="<%= file %>"></script><% }); %>
+</head>
+<body>
+<h1>SUTD MOUNTAINEERING</h1>
+<ul>
+  <li><a ui-sref="home">Home</a></li>
+  <li><a ui-sref="blog">Blog</a></li>
+  <li><a ui-sref="event">Event</a></li>
+  <li><a ui-sref="join">Join Us</a></li>
+</ul>
+<div class="container" ui-view="main"></div>
+</body>
+</html>
