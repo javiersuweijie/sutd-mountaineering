@@ -37,8 +37,19 @@ angular.module( 'mountainApp.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
+.controller( 'HomeCtrl', function HomeController( $scope, $http ) {
+  $http.get('https://dl.dropboxusercontent.com/s/gebnlls8q4aajc3/test.json').success(function(data) {
+    $scope.test = data.test;
+  });
 })
 
-;
-
+.directive('fullHeight', function($window) {
+  return {
+    restrict: 'A',
+    link: function(scope,element,attr) {
+      console.log($window.innerHeight);
+      console.log(element);
+      element.css({'height':$window.innerHeight+'px'});
+    }
+  };
+});
