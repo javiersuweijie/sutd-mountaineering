@@ -4,8 +4,10 @@ angular.module("mountainApp", [
   "mountainApp.home",
   "mountainApp.about",
   "mountainApp.blog",
+  "mountainApp.blog.post",
   "mountainApp.event",
   "mountainApp.join",
+  "tumblrService",
   "ui.router"
 ])
 .config ($stateProvider,$urlRouterProvider)->

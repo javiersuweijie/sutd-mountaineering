@@ -12,9 +12,11 @@
   .make-lg-column(8);
   .make-lg-column-offset(2);
   height: 150px;
-  margin-top: 20px;
+  margin-top: 10px;
   position: relative;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%
 }
 
 .blog-post:before {
@@ -36,15 +38,32 @@
   display: table;
   width: 100%;
   height: 100%;
-  color: #FFF;
+  color: #FEFEFE;
   z-index: 1;
   position: relative;
   .blog-title {
-    font-size: 4em;
+    font-size: 2.5em;
   }
   .blog-date {
     font-size: 1em;
+  }
+}
 
+.post-section {
+  .make-lg-column(6);
+  .make-lg-column-offset(3);
+}
+
+.post-title {
+  .h2;
+}
+
+.post-body {
+  p {
+    text-align: left;
+  }
+  img {
+    margin-top: 10px;
   }
 }
 

@@ -1,0 +1,12 @@
+<h1>Our Adventures</h1>
+<ul infinite-scroll="loadMore()" infinite-scroll-disabled="{{loading}}" class="blog-posts">
+  <li ng-repeat="post in posts" style="background-image:url({{post.coverPhoto}})"class="blog-post">
+  <a ui-sref="blog.post({id:post.id})" class="blog-title-content">
+    <div class="v-table-align">
+      <small class="blog-date">{{post.timestamp | date :'dd MMM yyyy'}}</small>
+      <header class="blog-title">{{post.title}}</header>
+    </div>
+  </a>
+  </li>
+  <div class="clearfix"></div>
+</ul>
