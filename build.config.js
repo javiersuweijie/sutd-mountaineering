@@ -67,7 +67,11 @@ module.exports = {
       'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
-      'vendor/angular-ui-utils/modules/route/route.js'
+      'vendor/angular-ui-utils/modules/route/route.js',
+      'vendor/jquery-mousewheel/jquery.mousewheel.min.js',
+      'vendor/jquery.event.move/js/jquery.event.move.js',
+      'vendor/jquery.event.swipe/js/jquery.event.swipe.js',
+      'vendor/jquery-snappish/jquery.snappish.js'
     ],
     css: [
     ],

@@ -47,9 +47,16 @@ angular.module( 'mountainApp.home', [
   return {
     restrict: 'A',
     link: function(scope,element,attr) {
-      console.log($window.innerHeight);
-      console.log(element);
-      element.css({'height':$window.innerHeight+'px'});
+      //element.css({'height':$window.innerHeight+'px'});
+    }
+  };
+})
+
+.directive('snappish', function($window) {
+  return {
+    restrict: 'A',
+    link: function(scope,element,attr) {
+      element.snappish();
     }
   };
 });
