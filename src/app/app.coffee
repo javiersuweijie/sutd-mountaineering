@@ -8,7 +8,8 @@ angular.module("mountainApp", [
   "mountainApp.event",
   "mountainApp.join",
   "tumblrService",
-  "ui.router"
+  "ui.router",
+  "ngFitText"
 ])
 .config ($stateProvider,$urlRouterProvider)->
   $urlRouterProvider.otherwise('/home')

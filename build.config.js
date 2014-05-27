@@ -71,7 +71,8 @@ module.exports = {
       'vendor/jquery-mousewheel/jquery.mousewheel.min.js',
       'vendor/jquery.event.move/js/jquery.event.move.js',
       'vendor/jquery.event.swipe/js/jquery.event.swipe.js',
-      'vendor/jquery-snappish/jquery.snappish.js'
+      'vendor/jquery-snappish/jquery.snappish.js',
+      'vendor/ngFitText/ng-FitText.js'
     ],
     css: [
     ],
