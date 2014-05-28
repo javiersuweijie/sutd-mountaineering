@@ -51,5 +51,25 @@
   }
 }
 
+.transform(@string){
+	-webkit-transform: @string;
+	-moz-transform: 	 @string;
+	-ms-transform: 		 @string;
+	-o-transform: 		 @string;
+}
+
+.transition (@transition) {
+	-webkit-transition: @transition;  
+	-moz-transition:    @transition;
+	-ms-transition:     @transition; 
+	-o-transition:      @transition;  
+}
+
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease, @count) {
+	-webkit-animation: @name @duration @delay @ease @count;
+	-moz-animation:    @name @duration @delay @ease @count;
+	-ms-animation:     @name @duration @delay @ease @count;
+}
+
 @import '../app/home/home.less';
 @import '../app/blog/blog.less';

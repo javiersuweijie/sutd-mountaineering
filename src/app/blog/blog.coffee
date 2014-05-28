@@ -20,6 +20,7 @@ angular.module('mountainApp.blog', [
 
 .controller 'BlogCtrl', ($scope,$interval,TumblrAPI)->
   $scope.posts = TumblrAPI.posts
+  $scope.tumblr = TumblrAPI
   $scope.loadMore = ()->
     TumblrAPI.loadPosts(3)
   return

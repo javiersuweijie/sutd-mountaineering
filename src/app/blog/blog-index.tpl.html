@@ -4,9 +4,14 @@
   <a ui-sref="blog.post({id:post.id})" class="blog-title-content">
     <div class="v-table-align">
       <small class="blog-date">{{post.timestamp | date :'dd MMM yyyy'}}</small>
-      <header class="blog-title">{{post.title}}</header>
+      <header data-fittext data-fittext-max="40" class="">{{post.title}}</header>
     </div>
   </a>
   </li>
   <div class="clearfix"></div>
 </ul>
+<div class="loading" ng-show="tumblr.loading">
+<div class="circle"></div>
+<div class="circle"></div>
+</div>
+<footer style="height:100px;" class="clearfix"></footer>
