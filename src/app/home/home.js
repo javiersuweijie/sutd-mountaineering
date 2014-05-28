@@ -37,9 +37,17 @@ angular.module( 'mountainApp.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope, $http ) {
+.controller( 'HomeCtrl', function HomeController( $scope, $http, $interval ) {
   $http.get('https://dl.dropboxusercontent.com/s/gebnlls8q4aajc3/test.json').success(function(data) {
-    $scope.test = data.test;
+    $scope.data = data;
+    $scope.slideRight = function() {
+      $(".team,.about-us").toggleClass("left");
+      $(".team,.about-us").toggleClass("right");
+    };
+    $scope.slideLeft = function() {
+      $(".team,.about-us").toggleClass("right");
+      $(".team,.about-us").toggleClass("left");
+    };
   });
 })
 

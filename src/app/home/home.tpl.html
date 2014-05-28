@@ -4,11 +4,23 @@
       <div class="v-table-align"><h1 data-fittext data-fittext-max="80">CHALLENGING THE UNKNOWN</h1></div>
     </section>
     <section full-height class="section-2">  
-      <h2>Introduction</h2>
+      <div class="wrapper">
+        <div class="about-us left">
+          <h1>About us</h1>
+          <h2>{{data.aboutus}}</h2>
+          <button ng-click="slideRight()" class="btn btn-default">team</button>
+        </div>
+        <div class="team left">
+          <div ng-repeat="profile in data.profiles" class="profile" data-name="{{profile.name | uppercase}}">
+            <img src="{{profile.photo}}"/>
+          </div>
+          <button ng-click="slideLeft()" class="btn btn-regular">about us</button>
+        </div>
+      </div>
     </section>
     <section full-height class="section-1" ph-img="1000x800">
       <h2>Banner</h2>
-      <div>{{test}}</div>
+      <div>{{data.test}}</div>
     </section>
   </div>
 </div>
