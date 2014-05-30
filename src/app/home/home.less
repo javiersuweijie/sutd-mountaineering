@@ -62,12 +62,33 @@ div[snappish] {
   transition-property: transform;
 }
 
+.round-button {
+  font-size: 1.5em;
+  border: solid #fff 1px;
+  border-radius: 50px; 
+  margin-left: 15px;
+  margin-right: auto;
+  width:100%;
+  font-weight: 200;
+  @media (min-width: @screen-sm-min) {
+    margin-top: 2em;
+    margin-left: auto;
+    width: 50%;
+  }
+}
+
 .section-2 {
   .make-row();
   overflow: hidden;
   text-align: center;
   background-color:#111;
   color:#EEE;
+
+  .slide-button {
+    .round-button;
+    .hidden-md;
+    .hidden-lg;
+  }
 
   button {
     .visible-xs;
@@ -80,23 +101,8 @@ div[snappish] {
     height:100%;
     position: relative;
   }
-  .slide-button {
-    .hidden-md;
-    .hidden-lg;
-    font-size: 1.5em;
-    border: solid #fff 1px;
-    border-radius: 50px; 
-    margin-left: 15px;
-    margin-right: auto;
-    width:100%;
-    font-weight: 200;
-    @media (min-width: @screen-sm-min) {
-      margin-top: 2em;
-      margin-left: auto;
-      width: 50%;
-    }
-  }
-  
+
+
   .about-us {
     .lr-transition;
     .make-md-column(6);
@@ -201,10 +207,21 @@ div[snappish] {
   background-image: url('front-cover.jpg');
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 50px;
+  h1 {
+    margin-top: 0px;
+  }
 }
 
 .absolute {
   position: absolute;
+}
+
+.support-button {
+  .round-button;
+  margin-top: 45px;
+  margin-left: auto;
+  width: 75%;
 }
 
 .support {
@@ -215,12 +232,13 @@ div[snappish] {
   }
   .progress-header {
     .h3;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   p {
     font-family: 'Roboto';
     font-weight: 500;
+    margin-bottom: 8px;
   }
 
   .progress {
@@ -235,14 +253,17 @@ div[snappish] {
     height: 28px;
     bottom: -8px;
   }
+  @progress-textbox-width: 110px;
   .progress-text {
-    width: 70px;
+    width: @progress-textbox-width;
     text-align: center;
     color: #ebedef;
     background-color: rgba(255,255,255,0.2);
     padding: 5px;
     border-radius: 7px;
-    bottom: -58px;
+    bottom: -38px;
+    font-family: "Roboto";
+    font-weight: 500;
   }
 
   .current-measure {
@@ -262,7 +283,7 @@ div[snappish] {
   .goal-text {
     .absolute;
     .progress-text;
-    .translate(-35px,0);
+    .translate(@progress-textbox-width/-2,0);
     left: 75%;
   }
 }

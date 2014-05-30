@@ -53,6 +53,8 @@ angular.module( 'mountainApp.home', [
 
   calculatePC = function() {
     $scope.data.pc = $scope.data.current/$scope.data.goal * 100;
+    $scope.data.currentString = "$"+$scope.data.current.toFixed(0).replace(/(\d)(?=(\d{3})+$)/g, "$1,");    
+    $scope.data.goalString = "$"+(""+$scope.data.goal).replace(/(\d)(?=(\d{3})+$)/g, "$1,");
   };
 })
 
