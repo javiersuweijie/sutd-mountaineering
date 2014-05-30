@@ -6,34 +6,40 @@
     <section full-height class="section-2">  
       <div class="wrapper">
         <div class="about-us left">
-          <h1>About us</h1>
-          <h2>{{data.aboutus}}</h2>
-          <button ng-click="slideRight()" class="btn btn-default">team</button>
+          <div class="v-table-align">
+            <h1>About us</h1>
+            <h2>{{data.aboutus}}</h2>
+            <div ng-click="slideRight()" class="slide-button">Look at our team <i class="fa fa-angle-double-right"></i></div>
+          </div>
         </div>
         <div class="team left">
-          <div ng-repeat="profile in data.profiles" class="profile" data-name="{{profile.name | uppercase}}">
-            <img src="{{profile.photo}}"/>
+          <div class="v-table-align">
+            <div ng-repeat="profile in data.profiles" class="profile" data-name="{{profile.name | uppercase}}">
+              <img src="{{profile.photo}}"/>
+            </div>
+            <div ng-click="slideLeft()" class="slide-button"><i class="fa fa-angle-double-left"></i> About us</div>
           </div>
-          <button ng-click="slideLeft()" class="btn btn-regular">about us</button>
         </div>
       </div>
     </section>
     <section full-height class="section-1 banner">
-      <h1>We need your support</h1>
-      <div class="support">
-        <p>Help us build a better SUTD</p>
-        <p>After we have achieved our goal, all additional funds raised will be channelled to build other student clubs and 5th Rows in SUTD.</p>
-        <p>If you would like to support us in any other way, talk to us at <a href="mailto:mountaineering@club.sutd.edu.sg">mountaineering@club.sutd.edu.sg</a></p>
-        <header class="progress-header">Our progress</header>
-        <div class="progress">
-          <div class="support-progress" style="width:{{data.pc}}%"></div>
+      <div class="v-table-align">
+        <h1>We need your support</h1>
+        <div class="support">
+          <p>Help us build a better SUTD</p>
+          <p>After we have achieved our goal, all additional funds raised will be channelled to build other student clubs and 5th Rows in SUTD.</p>
+          <p>If you would like to support us in any other way, talk to us at <a href="mailto:mountaineering@club.sutd.edu.sg">mountaineering@club.sutd.edu.sg</a></p>
+          <header class="progress-header">Our progress</header>
+          <div class="progress">
+            <div class="support-progress" style="width:{{data.pc}}%"></div>
+          </div>
+          <div class="current-measure" style="left:{{data.pc}}%">
+          </div>
+          <div class="current-text" style="left:{{data.pc}}%">current {{data.current | currency | limitTo:8}}</div>
+          <div class="goal-measure">
+          </div>
+          <div class="goal-text">goal {{data.goal | currency | limitTo:8}}</div>
         </div>
-        <div class="current-measure" style="left:{{data.pc}}%">
-        </div>
-        <div class="current-text" style="left:{{data.pc}}%">current {{data.current | currency | limitTo:8}}</div>
-        <div class="goal-measure">
-        </div>
-        <div class="goal-text">goal {{data.goal | currency | limitTo:8}}</div>
       </div>
     </section>
   </div>
