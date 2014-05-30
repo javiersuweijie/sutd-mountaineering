@@ -29,7 +29,11 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url(fonts/Roboto-Regular.woff) format('woff');
+}
+
+h1, h3, .h1, .h3 {
+  font-family: 'Roboto';
+  font-weight: 900;
 }
 
 /**
@@ -43,11 +47,35 @@
   background-color: #fff;
   border-color: none;
   .navbar-header {
-    font-size: 1.7em;
+    .navbar-brand {
+      font-size: 1.2em;
+      font-family: Roboto;
+      font-weight: 900;
+      width: 80%;
+      padding: 9px 10px;
+      margin-top: 8px;
+    }
   }
   a {
     color: #000;
     font-size: 1.5em;
+  }
+  .icon-bar {
+    background-color: @gray-darker;
+  }
+}
+
+.menu-collapse {
+  position: relative;
+  img.sutd-logo {
+    position: absolute;
+    top: 25px;
+    left: 29px;
+  }
+  img.mt-logo {
+    position: absolute;
+    top: 95px;
+    left: 0px;
   }
 }
 
@@ -73,3 +101,4 @@
 
 @import '../app/home/home.less';
 @import '../app/blog/blog.less';
+@import '../app/event/event.less';

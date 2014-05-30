@@ -15,6 +15,9 @@ angular.module("mountainApp", [
   $urlRouterProvider.otherwise('/home')
 
 .controller 'AppCtrl', ($scope, $location) ->
+  $scope.menuCollapse = true
+  $scope.toggleMenu = ()->
+    $scope.menuCollapse = !$scope.menuCollapse
   $scope.$on '$stateChangeSuccess',
   (event, toState, toParams, fromState, fromParams) ->
     if angular.isDefined toState.data.pageTitle
