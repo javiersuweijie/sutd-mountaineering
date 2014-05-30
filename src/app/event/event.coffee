@@ -10,5 +10,17 @@ angular.module('mountainApp.event', [
         templateUrl: 'event/event.tpl.html'
     data: pageTitle: 'Event'
   return
-.controller 'EventCtrl', ($scope)->
+.controller 'EventCtrl', ($scope,$http,$filter)->
+  $scope.upcoming = []
+  $scope.past = []
+  $http.get("https://dl.dropboxusercontent.com/s/cng68etfhrw8jj0/events.json")
+    .success (data)->
+      today = parseInt $filter('date')(Date.now(),'yyyyMMdd')
+      for event in data.events
+        intDate = parseInt $filter('date')(event.date,'yyyyMMdd')
+        if intDate > today
+          $scope.upcoming.push event
+        else
+          $scope.past.push event
+
   return

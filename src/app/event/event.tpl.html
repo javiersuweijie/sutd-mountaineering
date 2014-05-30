@@ -1,1 +1,44 @@
-<h1>Events</h1>
+<section class="event-section">
+<h1>Upcoming Events</h1>
+<small>Hover or click for details</small>
+<ul class="events">
+  <li ng-repeat="event in upcoming" class="event">
+  <div class="event-left"> 
+    <div class="event-date">
+      <h1>{{event.date | date: 'dd'}}</h1>
+      <h2>{{event.date | date: 'MMM' | uppercase}}</h2>
+    </div>
+  </div>
+  <div class="event-right">
+    <div class="event-title">
+      <h2>{{event.title}}</h2>
+      <h4>{{event.location}}</h4>
+    </div>
+    <div class="event-details">
+      <p>{{event.details}}</p>
+      <p ng-show="event.registration">Register <a href="{{event.registration}}">here</a></p>
+    </div>
+  </div>
+  </li>
+</ul>
+<h1>Past Events</h1>
+<ul class="events">
+  <li ng-repeat="event in past" class="event">
+  <div class="event-left"> 
+    <div class="event-date">
+      <h1>{{event.date | date: 'dd'}}</h1>
+      <h2>{{event.date | date: 'MMM' | uppercase}}</h2>
+    </div>
+  </div>
+  <div class="event-right">
+    <div class="event-title">
+      <h2>{{event.title}}</h2>
+      <h4>{{event.location}}</h4>
+    </div>
+    <div class="event-details">
+      <p>{{event.details}}</p>
+    </div>
+  </div>
+  </li>
+</ul>
+</section>
