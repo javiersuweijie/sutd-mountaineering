@@ -18,9 +18,23 @@
         </div>
       </div>
     </section>
-    <section full-height class="section-1" ph-img="1000x800">
-      <h2>Banner</h2>
-      <div>{{data.test}}</div>
+    <section full-height class="section-1 banner">
+      <h1>We need your support</h1>
+      <div class="support">
+        <p>Help us build a better SUTD</p>
+        <p>After we have achieved our goal, all additional funds raised will be channelled to build other student clubs and 5th Rows in SUTD.</p>
+        <p>If you would like to support us in any other way, talk to us at <a href="mailto:mountaineering@club.sutd.edu.sg">mountaineering@club.sutd.edu.sg</a></p>
+        <header class="progress-header">Our progress</header>
+        <div class="progress">
+          <div class="support-progress" style="width:{{data.pc}}%"></div>
+        </div>
+        <div class="current-measure" style="left:{{data.pc}}%">
+        </div>
+        <div class="current-text" style="left:{{data.pc}}%">current {{data.current | currency | limitTo:8}}</div>
+        <div class="goal-measure">
+        </div>
+        <div class="goal-text">goal {{data.goal | currency | limitTo:8}}</div>
+      </div>
     </section>
   </div>
 </div>

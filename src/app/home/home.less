@@ -30,7 +30,6 @@ div[snappish] {
 }
 
 .section-1 {
-  border: 1px black solid;
   display: table;
   color: #FFF;
   h1 span {
@@ -49,10 +48,10 @@ div[snappish] {
 }
 
 .lr-transition {
-  -webkit-transition-duration: 1s;
-  -moz-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
+  -webkit-transition-duration: 0.7s;
+  -moz-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
+  transition-duration: 0.7s;
   -webkit-transition-timing-function: ease;
   -moz-transition-timing-function: ease;
   -o-transition-timing-function: ease;
@@ -71,7 +70,8 @@ div[snappish] {
   color:#EEE;
 
   button {
-    .hidden-lg;
+    .visible-xs;
+    .visible-sm;
   }
 
   .wrapper {
@@ -83,40 +83,63 @@ div[snappish] {
   
   .about-us {
     .lr-transition;
-    .make-lg-column(6);
-    margin-top: 60px;
+    .make-md-column(6);
+    margin-top: 70px;
     height: 100%;
+    h1 {
+      margin-right: -15px;
+    }
     h2 {
-      line-height: 40px;
+      margin-left: 15px;
+      text-align: justify;
+      font-size: 1em;
+      @media (min-width: @screen-md-min) {
+        font-size: 1.5em;
+        line-height: 40px;
+      }
     }
   }
   .team {
-    .lr-transition;
     @photo-size: 150px;
-    .make-lg-column(6);
+    .lr-transition;
+    .make-md-column(6);
     margin-top: 60px;
     padding-top: 65px;
     height: 100%;
 
-    @media (max-width: 1200px) {
+    @media (max-width: @screen-md-min) {
       position: absolute;
       top: 0;
       left: 100%;
       width: 100%;
     }
 
-    .profile {
+    .responsive-profile {
+      @media (max-width: @screen-md-min) {
+        width: 75px;
+        height: 75px;
+      }      
       width: @photo-size;
       height: @photo-size;
-      border-radius: 50%;
+    }
+
+    .responsive-margin {
+      @media (max-width: @screen-md-min) {
+        margin: 5px;
+      }      
       margin: 20px;
+    }
+
+    .profile {
+      .responsive-profile;
+      .responsive-margin;
+      border-radius: 50%;
       display: inline-block;
       overflow: hidden;
       position: relative;
       img {
-        height: @photo-size;
-        width: @photo-size;
-      }
+        .responsive-profile;
+       }
     }
 
     .profile:before {
@@ -149,4 +172,75 @@ div[snappish] {
 
 .bg-1 {
   background-image: url('mountain2.jpg');
+}
+
+.banner {
+  background-image: url('front-cover.jpg');
+  padding-top: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.support {
+  position: relative;
+  @media (min-width: @screen-md-min) {
+    width: 70%;
+    .center-block();
+  }
+  .progress-header {
+    .h3;
+    margin-top: 10px;
+  }
+
+  p {
+    font-family: 'Roboto';
+    font-weight: 500;
+  }
+
+  .progress {
+    .support-progress {
+      .progress-bar;
+      .progress-bar-success;
+    }
+  }
+  .progress-measure {
+    background: #7f8c8d;
+    width: 2px;
+    height: 28px;
+    bottom: -8px;
+  }
+  .progress-text {
+    width: 70px;
+    text-align: center;
+    color: #ebedef;
+    background-color: rgba(255,255,255,0.2);
+    padding: 5px;
+    border-radius: 7px;
+    bottom: -58px;
+  }
+
+  .current-measure {
+    .absolute;
+    .progress-measure;
+  }
+  .current-text {
+    .absolute;
+    .progress-text;
+    .translate(-35px,0);
+  }
+  .goal-measure {
+    .absolute;
+    .progress-measure;
+    left: 75%;
+  }
+  .goal-text {
+    .absolute;
+    .progress-text;
+    .translate(-35px,0);
+    left: 75%;
+  }
 }

@@ -40,6 +40,7 @@ angular.module( 'mountainApp.home', [
 .controller( 'HomeCtrl', function HomeController( $scope, $http, $interval ) {
   $http.get('https://dl.dropboxusercontent.com/s/gebnlls8q4aajc3/test.json').success(function(data) {
     $scope.data = data;
+    calculatePC();
     $scope.slideRight = function() {
       $(".team,.about-us").toggleClass("left");
       $(".team,.about-us").toggleClass("right");
@@ -49,6 +50,10 @@ angular.module( 'mountainApp.home', [
       $(".team,.about-us").toggleClass("left");
     };
   });
+
+  calculatePC = function() {
+    $scope.data.pc = $scope.data.current/$scope.data.goal * 100;
+  };
 })
 
 .directive('fullHeight', function($window) {
