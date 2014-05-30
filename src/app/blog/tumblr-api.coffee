@@ -5,6 +5,7 @@ angular.module('tumblrService', [])
     this.totalPosts = 4294967295
     this.currentOffset = 0
     this.loading = false
+    this.end = false
 
     this.fakeLoad = ()->
       if this.loading is true
@@ -27,7 +28,10 @@ angular.module('tumblrService', [])
         jsonp=JSON_CALLBACK&id='+id)
 
     this.loadPosts = (limit)->
-      if this.loading or this.currentOffset >= this.totalPosts
+      if this.loading
+        return
+      if this.currentOffset >= this.totalPosts
+        this.end = true
         return
       this.loading = true
       $http.jsonp(

@@ -22,5 +22,5 @@ angular.module('mountainApp.blog', [
   $scope.posts = TumblrAPI.posts
   $scope.tumblr = TumblrAPI
   $scope.loadMore = ()->
-    TumblrAPI.loadPosts(3)
+    TumblrAPI.loadPosts(4)
   return
