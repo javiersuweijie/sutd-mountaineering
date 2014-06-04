@@ -1,6 +1,13 @@
 <h1>Our Adventures</h1>
+
+<a ng-click="changeTag('')">All</a>
+<span> | </span>
+<a ng-click="changeTag('friendship-peak')">Friendship Peak</a>
+<span> | </span>
+<a ng-click="changeTag('大峰')">Da Feng (China)</a>
+
 <ul infinite-scroll="loadMore()" infinite-scroll-disabled="{{loading}}" class="blog-posts">
-  <li ng-repeat="post in posts" style="background-image:url({{post.coverPhoto}})"class="blog-post">
+  <li ng-repeat="post in posts" style="background-image:url({{post.coverPhoto[0]}})"class="blog-post">
   <a ui-sref="blog.post({id:post.id})" class="blog-title-content">
     <div class="v-table-align">
       <small class="blog-date">{{post.timestamp | date :'dd MMM yyyy'}}</small>

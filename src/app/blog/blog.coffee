@@ -21,6 +21,14 @@ angular.module('mountainApp.blog', [
 .controller 'BlogCtrl', ($scope,$interval,TumblrAPI)->
   $scope.posts = TumblrAPI.posts
   $scope.tumblr = TumblrAPI
+  $scope.tag = ""
+
+  $scope.changeTag = (tag)->
+    TumblrAPI.clear()
+    $scope.posts = TumblrAPI.posts
+    $scope.tag = tag
+    $scope.loadMore()
+
   $scope.loadMore = ()->
-    TumblrAPI.loadPosts(4)
+    TumblrAPI.loadPosts(4,$scope.tag)
   return

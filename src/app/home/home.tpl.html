@@ -28,7 +28,7 @@
         <div class="support">
           <p>Help us build a better SUTD</p>
           <p>After we have achieved our goal, all additional funds raised will be channelled to build other student clubs and 5th Rows in SUTD.</p>
-          <p>If you would like to support us in any other way, talk to us at <a href="mailto:mountaineering@club.sutd.edu.sg">mountaineering@club.sutd.edu.sg</a></p>
+          <p>If you would like to support us in any other way, talk to us at <a href="mailto:{{data.email}}">{{data.email}}</a></p>
           <header class="progress-header">Our progress</header>
           <div class="progress">
             <div class="support-progress" style="width:{{data.pc}}%">{{data.currentString}}</div>
@@ -37,7 +37,7 @@
           </div>
           <div class="goal-text">GOAL {{data.goalString}}</div>
         </div>
-        <div class="support-button">View our donars</div>
+        <div class="support-button" ng-click="openDonor()" >View our donors</div>
       </div>
     </section>
   </div>

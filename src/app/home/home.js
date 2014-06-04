@@ -37,7 +37,8 @@ angular.module( 'mountainApp.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope, $http, $interval ) {
+.controller( 'HomeCtrl', function HomeController( $scope, $http, $interval, $modal ) {
+
   $http.get('https://dl.dropboxusercontent.com/s/gebnlls8q4aajc3/test.json').success(function(data) {
     $scope.data = data;
     calculatePC();
@@ -55,6 +56,27 @@ angular.module( 'mountainApp.home', [
     $scope.data.pc = $scope.data.current/$scope.data.goal * 100;
     $scope.data.currentString = "$"+$scope.data.current.toFixed(0).replace(/(\d)(?=(\d{3})+$)/g, "$1,");    
     $scope.data.goalString = "$"+(""+$scope.data.goal).replace(/(\d)(?=(\d{3})+$)/g, "$1,");
+  };
+
+  $scope.openDonor = function() {
+    console.log($scope.data.donors);
+    var modalInstance = $modal.open({
+      templateUrl: 'home/donor.tpl.html',
+      controller: 'ModalInstanceCtrl',
+      size: 'lg',
+      resolve: {
+        donors: function() {
+          return $scope.data.donors;
+        }
+      }
+    });
+  };
+})
+
+.controller('ModalInstanceCtrl', function($scope, $modalInstance, donors) {
+  $scope.donors = donors;
+  $scope.close = function() {
+    $modalInstance.close();
   };
 })
 

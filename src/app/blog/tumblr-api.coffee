@@ -6,6 +6,11 @@ angular.module('tumblrService', [])
     this.currentOffset = 0
     this.loading = false
     this.end = false
+    
+    this.clear = ()->
+      this.posts = []
+      this.currentOffset = 0
+      this.end = false
 
     this.fakeLoad = ()->
       if this.loading is true
@@ -27,7 +32,7 @@ angular.module('tumblrService', [])
         'posts?api_key=wT5v47y54z3yCq95DDGcwJtq03EX9AYxKCoXTtbSvivk18vfo3&
         jsonp=JSON_CALLBACK&id='+id)
 
-    this.loadPosts = (limit)->
+    this.loadPosts = (limit,tag)->
       if this.loading
         return
       if this.currentOffset >= this.totalPosts
@@ -38,7 +43,8 @@ angular.module('tumblrService', [])
         'http://api.tumblr.com/v2/blog/sutd-mountaineering.tumblr.com/'+
         'posts?api_key=wT5v47y54z3yCq95DDGcwJtq03EX9AYxKCoXTtbSvivk18vfo3&
         jsonp=JSON_CALLBACK&offset='+this.currentOffset+
-        '&limit='+limit)
+        '&limit='+limit+
+        '&tag='+tag)
         .success (data) =>
           this.totalPosts = data.response.total_posts
           this.posts.push handleText(post) for post in data.response.posts
@@ -49,7 +55,7 @@ angular.module('tumblrService', [])
     handleText = (post)->
       sanitisedPost = post
       sanitisedPost.timestamp = post.timestamp*1000
-      sanitisedPost.coverPhoto = post.body.match(/http[^\"]+/)[0]
+      sanitisedPost.coverPhoto = post.body.match(/http[^\"]+/) || []
       sanitisedPost.body = $sce.trustAsHtml(post.body)
       return sanitisedPost
 

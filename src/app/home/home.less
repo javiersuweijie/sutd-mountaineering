@@ -66,9 +66,9 @@ div[snappish] {
   font-size: 1.5em;
   border: solid #fff 1px;
   border-radius: 50px; 
-  margin-left: 15px;
+  margin-left: auto;
   margin-right: auto;
-  width:100%;
+  width:80%;
   font-weight: 200;
   @media (min-width: @screen-sm-min) {
     margin-top: 2em;
@@ -83,11 +83,12 @@ div[snappish] {
   text-align: center;
   background-color:#111;
   color:#EEE;
+  width:auto!important;
 
   .slide-button {
     .round-button;
-    .hidden-md;
-    .hidden-lg;
+    //.hidden-md;
+    //.hidden-lg;
   }
 
   button {
@@ -105,39 +106,41 @@ div[snappish] {
 
   .about-us {
     .lr-transition;
-    .make-md-column(6);
     display: table;
     height: 100%;
+    padding: 10px;
+    @media (min-width: @screen-md-min) {
+      padding: 10em;
+    }
     h1 {
       margin-right: -15px;
     }
     h2 {
       margin-left: 15px;
-      text-align: justify;
+      margin-right: 15px;
+      text-align: left;
       font-size: 1em;
+      font-family: Calibri;
+      font-weight: 200;
       @media (min-width: @screen-sm-min) {
         font-size: 2em;
       }
       @media (min-width: @screen-md-min) {
-        font-size: 1.75em;
-        line-height: 35px;
+        font-size: 1.5em;
+        line-height: 1.75em;
       }
     }
   }
   .team {
     @photo-size: 150px;
     .lr-transition;
-    .make-md-column(6);
     padding-top: 65px;
     height: 100%;
     display: table;
-
-    @media (max-width: @screen-md-min) {
-      position: absolute;
-      top: 0;
-      left: 100%;
-      width: 100%;
-    }
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
 
     .responsive-profile {
       .square(75px);
@@ -222,6 +225,14 @@ div[snappish] {
   margin-top: 45px;
   margin-left: auto;
   width: 75%;
+  @media (min-width: @screen-md-min) {
+    width: 25%;
+  }
+}
+
+.support-button:hover {
+  color: black;
+  background: white;
 }
 
 .support {
@@ -285,5 +296,17 @@ div[snappish] {
     .progress-text;
     .translate(@progress-textbox-width/-2,0);
     left: 75%;
+  }
+}
+
+.donors {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  .donor-logo {
+    width:100%;
+  }
+  .individual {
+    text-align: left;
   }
 }
