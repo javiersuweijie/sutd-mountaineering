@@ -13,7 +13,7 @@ angular.module('mountainApp.event', [
 .controller 'EventCtrl', ($scope,$http,$filter)->
   $scope.upcoming = []
   $scope.past = []
-  $http.get("https://dl.dropboxusercontent.com/s/cng68etfhrw8jj0/events.json")
+  $http.get("https://dl.dropboxusercontent.com/s/qg8l0veawjzu099/events.json")
     .success (data)->
       today = parseInt $filter('date')(Date.now(),'yyyyMMdd')
       for event in data.events

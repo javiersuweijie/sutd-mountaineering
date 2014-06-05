@@ -1,5 +1,5 @@
 <section class="join-section">
-  <h1>Join Us</h1>
+  <h1>We are recuiting!</h1>
   <div class="row">
     <div class="join-info">
       <section class="join-info-right">
@@ -19,4 +19,24 @@
   <div class="join-action">
     <h3>Email us now at <a href="mountaineering@club.sutd.edu.sg">mountaineering@club.sutd.edu.sg</a></h3>
   </div>
+  <section class="join-equipment">
+    <h1>Here is a sneak peak of the equipment we can offer</h1>
+    <div class="join-equipment-table">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Equipment</th>
+            <th>Rental fee</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in rentals">
+          <td>{{item.item}}</td>
+          <td>{{item.cost}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <footer></footer>
 </section>

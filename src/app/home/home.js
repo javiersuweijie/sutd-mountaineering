@@ -39,7 +39,7 @@ angular.module( 'mountainApp.home', [
  */
 .controller( 'HomeCtrl', function HomeController( $scope, $http, $interval, $modal ) {
 
-  $http.get('https://dl.dropboxusercontent.com/s/gebnlls8q4aajc3/test.json').success(function(data) {
+  $http.get('https://dl.dropboxusercontent.com/s/vocvzmu09bmzf53/home-page.json').success(function(data) {
     $scope.data = data;
     calculatePC();
     $scope.slideRight = function() {
